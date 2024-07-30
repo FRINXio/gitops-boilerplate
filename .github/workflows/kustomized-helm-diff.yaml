@@ -1,0 +1,116 @@
+name: Kustomized-Helm manifest diff
+
+on: 
+  pull_request:
+
+jobs:
+  list-changed-charts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      changed_charts: ${{ steps.list-changed.outputs.charts }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: azure/setup-helm@v3
+        with:
+          version: v3.12.1
+
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+          check-latest: true
+
+      - uses: helm/chart-testing-action@v2.6.1
+
+      - name: Run chart-testing (list-changed)
+        id: list-changed
+        run: |
+          changed_files=$(ct list-changed --config .github/lint_config.yaml | jq -R -s -c 'split("\n") | map(select(. != ""))')
+          echo "Changed files: $changed_files"
+          echo "charts=${changed_files}" >> "$GITHUB_OUTPUT"
+
+  dynamic_matrix:
+    needs: list-changed-charts
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    strategy:
+      matrix:
+        file: ${{ fromJson(needs.list-changed-charts.outputs.changed_charts) }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          path: head
+
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.base.ref }}
+          fetch-depth: 0
+          path: main
+
+      - uses: azure/setup-helm@v3
+        with:
+          version: v3.12.1
+
+      - name: Helm dependency update and render
+        run: |
+          REF_PATH=head
+          if [ ! -d "${REF_PATH}/${{ matrix.file }}" ]; then
+            mkdir -p "${REF_PATH}/${{ matrix.file }}"
+            touch "${REF_PATH}/${{ matrix.file }}/all.yaml"
+            touch "${REF_PATH}/${{ matrix.file }}/kustomization.yaml"
+
+            echo "apiVersion: kustomize.config.k8s.io/v1beta1" > "${REF_PATH}/${{ matrix.file }}/kustomization.yaml"
+            echo "kind: Kustomization" >> "${REF_PATH}/${{ matrix.file }}/kustomization.yaml"
+            
+            echo "resources:" >> "${REF_PATH}/${{ matrix.file }}/kustomization.yaml"
+            echo "  - all.yaml" >> "${REF_PATH}/${{ matrix.file }}/kustomization.yaml"
+          else
+            pushd ${REF_PATH}/${{ matrix.file }}
+              helm dependency update
+              helm template . --name-template $(basename $PWD) --namespace frinx --values values.yaml --values cluster-values.yaml --include-crds > all.yaml
+            popd
+          fi
+
+      - name: Helm dependency update and render
+        run: |
+          REF_PATH=main
+
+          if [ ! -d "${REF_PATH}/${{ matrix.file }}" ]; then
+            mkdir -p "${REF_PATH}/${{ matrix.file }}"
+            touch "${REF_PATH}/${{ matrix.file }}/all.yaml"
+            touch "${REF_PATH}/${{ matrix.file }}/kustomization.yaml"
+
+            echo "apiVersion: kustomize.config.k8s.io/v1beta1" > "${REF_PATH}/${{ matrix.file }}/kustomization.yaml"
+            echo "kind: Kustomization" >> "${REF_PATH}/${{ matrix.file }}/kustomization.yaml"
+            
+            echo "resources:" >> "${REF_PATH}/${{ matrix.file }}/kustomization.yaml"
+            echo "  - all.yaml" >> "${REF_PATH}/${{ matrix.file }}/kustomization.yaml"
+          else
+            pushd ${REF_PATH}/${{ matrix.file }}
+              helm dependency update
+              helm template . --name-template $(basename $PWD) --namespace frinx --values values.yaml --values cluster-values.yaml --include-crds > all.yaml
+            popd
+          fi
+
+      - uses: int128/kustomize-action@v1
+        id: kustomize-head
+        with:
+          base-directory: head/${{ matrix.file }}
+          kustomization: kustomization.yaml
+          write-individual-files: true
+
+      - uses: int128/kustomize-action@v1
+        id: kustomize-base
+        with:
+          base-directory: main/${{ matrix.file }}
+          kustomization: kustomization.yaml
+          write-individual-files: true
+
+      - uses: int128/diff-action@v1
+        with:
+          base: ${{ steps.kustomize-base.outputs.directory }}
+          head: ${{ steps.kustomize-head.outputs.directory }}

@@ -1,0 +1,43 @@
+environment:
+  cluster:
+    enabled: true
+  local:
+    enabled: false
+
+frinx-machine:
+  frinx-machine-core:
+    krakend:
+      ingress:
+        enabled: true
+        className: nginx
+        annotations:
+          nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+          nginx.ingress.kubernetes.io/proxy-connect-timeout: "3600"
+          nginx.ingress.kubernetes.io/proxy-read-timeout: "3600"
+          nginx.ingress.kubernetes.io/proxy-send-timeout: "3600"
+        hosts:
+          - host: fm-dev.10.7.6.124.nip.io
+            paths:
+              - path: "/"
+                pathType: ImplementationSpecific
+
+    uniconfig:
+      ingress:
+        enabled: true
+        className: nginx
+        annotations:
+          nginx.ingress.kubernetes.io/proxy-connect-timeout: "3600"
+          nginx.ingress.kubernetes.io/proxy-read-timeout: "3600"
+          nginx.ingress.kubernetes.io/proxy-send-timeout: "3600"
+        hosts:
+          - host: uniconfig-controller.10.7.6.124.nip.io
+            paths:
+              - path: "/"
+                pathType: ImplementationSpecific
+
+      image:
+        repository: "frinxio/uniconfig"
+
+    performance-monitor:
+      image:
+        repository: "frinxio/performance-monitor"

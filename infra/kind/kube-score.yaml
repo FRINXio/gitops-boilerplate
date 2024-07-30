@@ -1,0 +1,2917 @@
+apps/v1/Deployment arango-frinx-machine-operators-operator in gitops-boilerplate-dev💥
+    path=STDIN
+    [CRITICAL] Pod NetworkPolicy
+        · The pod does not have a matching NetworkPolicy
+            Create a NetworkPolicy that targets this pod to control who/what
+            can communicate with this pod. Note, this feature needs to be
+            supported by the CNI implementation used in the Kubernetes cluster
+            to have an effect.
+    [CRITICAL] Container Ephemeral Storage Request and Limit
+        · operator -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · operator -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+    [CRITICAL] Container Image Pull Policy
+        · operator -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+    [CRITICAL] Container Security Context User Group ID
+        · operator -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · operator -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+    [CRITICAL] Deployment has PodDisruptionBudget
+        · No matching PodDisruptionBudget was found
+            It's recommended to define a PodDisruptionBudget to avoid
+            unexpected downtime during Kubernetes maintenance operations, such
+            as when draining a node.
+apps/v1/Deployment cloudnative-pg-operator in gitops-boilerplate-dev          💥
+    path=STDIN
+    [CRITICAL] Container Image Pull Policy
+        · manager -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+    [CRITICAL] Pod Probes
+        · Container has the same readiness and liveness probe
+            Using the same probe for liveness and readiness is very likely
+            dangerous. Generally it's better to avoid the livenessProbe than
+            re-using the readinessProbe.
+            More information: https://github.com/zegl/kube-score/blob/master/README_PROBES.md
+    [CRITICAL] Container Resources
+        · manager -> CPU limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.cpu
+        · manager -> Memory limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.memory
+        · manager -> CPU request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.cpu
+        · manager -> Memory request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.memory
+    [CRITICAL] Pod NetworkPolicy
+        · The pod does not have a matching NetworkPolicy
+            Create a NetworkPolicy that targets this pod to control who/what
+            can communicate with this pod. Note, this feature needs to be
+            supported by the CNI implementation used in the Kubernetes cluster
+            to have an effect.
+    [CRITICAL] Container Ephemeral Storage Request and Limit
+        · manager -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · manager -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+    [WARNING] Deployment Replicas
+        · Deployment few replicas
+            Deployments targeted by Services are recommended to have at least 2
+            replicas to prevent unwanted downtime.
+apps/v1/Deployment conductor-server in gitops-boilerplate-dev                 💥
+    path=STDIN
+    [CRITICAL] Container Resources
+        · check-db-ready -> CPU limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.cpu
+        · check-db-ready -> Memory limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.memory
+        · check-db-ready -> CPU request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.cpu
+        · check-db-ready -> Memory request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.memory
+    [CRITICAL] Pod NetworkPolicy
+        · The pod does not have a matching NetworkPolicy
+            Create a NetworkPolicy that targets this pod to control who/what
+            can communicate with this pod. Note, this feature needs to be
+            supported by the CNI implementation used in the Kubernetes cluster
+            to have an effect.
+    [CRITICAL] Container Ephemeral Storage Request and Limit
+        · check-db-ready -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · check-db-ready -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+        · workflow-manager -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · workflow-manager -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+        · workflow-manager-schellar -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · workflow-manager-schellar -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+    [CRITICAL] Container Security Context User Group ID
+        · check-db-ready -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · check-db-ready -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+        · workflow-manager -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · workflow-manager -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+        · workflow-manager-schellar -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · workflow-manager-schellar -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+    [CRITICAL] Container Security Context ReadOnlyRootFilesystem
+        · check-db-ready -> Container has no configured security context
+            Set securityContext to run the container in a more secure context.
+        · workflow-manager -> The pod has a container with a writable root filesystem
+            Set securityContext.readOnlyRootFilesystem to true
+        · workflow-manager-schellar -> The pod has a container with a writable root filesystem
+            Set securityContext.readOnlyRootFilesystem to true
+    [CRITICAL] Container Image Pull Policy
+        · check-db-ready -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+        · workflow-manager -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+        · workflow-manager-schellar -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+    [CRITICAL] Pod Probes
+        · Container has the same readiness and liveness probe
+            Using the same probe for liveness and readiness is very likely
+            dangerous. Generally it's better to avoid the livenessProbe than
+            re-using the readinessProbe.
+            More information: https://github.com/zegl/kube-score/blob/master/README_PROBES.md
+    [WARNING] Deployment Replicas
+        · Deployment few replicas
+            Deployments targeted by Services are recommended to have at least 2
+            replicas to prevent unwanted downtime.
+apps/v1/Deployment device-induction in gitops-boilerplate-dev                 💥
+    path=STDIN
+    [CRITICAL] Container Ephemeral Storage Request and Limit
+        · check-uniconfig-ready -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · check-uniconfig-ready -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+        · check-conductor-ready -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · check-conductor-ready -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+        · check-inventory-ready -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · check-inventory-ready -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+        · copy-worker-files -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · copy-worker-files -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+        · device-induction -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · device-induction -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+    [CRITICAL] Container Image Tag
+        · check-uniconfig-ready -> Image with latest tag
+            Using a fixed tag is recommended to avoid accidental upgrades
+        · check-conductor-ready -> Image with latest tag
+            Using a fixed tag is recommended to avoid accidental upgrades
+        · check-inventory-ready -> Image with latest tag
+            Using a fixed tag is recommended to avoid accidental upgrades
+    [CRITICAL] Container Image Pull Policy
+        · copy-worker-files -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+        · device-induction -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+    [CRITICAL] Container Security Context User Group ID
+        · check-uniconfig-ready -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · check-uniconfig-ready -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+        · check-conductor-ready -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · check-conductor-ready -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+        · check-inventory-ready -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · check-inventory-ready -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+        · copy-worker-files -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · copy-worker-files -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+        · device-induction -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · device-induction -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+    [CRITICAL] Container Security Context ReadOnlyRootFilesystem
+        · check-uniconfig-ready -> Container has no configured security context
+            Set securityContext to run the container in a more secure context.
+        · check-conductor-ready -> Container has no configured security context
+            Set securityContext to run the container in a more secure context.
+        · check-inventory-ready -> Container has no configured security context
+            Set securityContext to run the container in a more secure context.
+        · copy-worker-files -> Container has no configured security context
+            Set securityContext to run the container in a more secure context.
+        · device-induction -> The pod has a container with a writable root filesystem
+            Set securityContext.readOnlyRootFilesystem to true
+    [CRITICAL] Pod NetworkPolicy
+        · The pod does not have a matching NetworkPolicy
+            Create a NetworkPolicy that targets this pod to control who/what
+            can communicate with this pod. Note, this feature needs to be
+            supported by the CNI implementation used in the Kubernetes cluster
+            to have an effect.
+apps/v1/Deployment frinx-frontend in gitops-boilerplate-dev                   💥
+    path=STDIN
+    [CRITICAL] Container Image Pull Policy
+        · frinx-frontend -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+        · frinx-frontend-proxy -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+    [CRITICAL] Pod Probes
+        · Container has the same readiness and liveness probe
+            Using the same probe for liveness and readiness is very likely
+            dangerous. Generally it's better to avoid the livenessProbe than
+            re-using the readinessProbe.
+            More information: https://github.com/zegl/kube-score/blob/master/README_PROBES.md
+    [CRITICAL] Container Security Context User Group ID
+        · frinx-frontend -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · frinx-frontend -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+        · frinx-frontend-proxy -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · frinx-frontend-proxy -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+    [CRITICAL] Container Security Context ReadOnlyRootFilesystem
+        · frinx-frontend -> The pod has a container with a writable root filesystem
+            Set securityContext.readOnlyRootFilesystem to true
+        · frinx-frontend-proxy -> The pod has a container with a writable root filesystem
+            Set securityContext.readOnlyRootFilesystem to true
+    [CRITICAL] Pod NetworkPolicy
+        · The pod does not have a matching NetworkPolicy
+            Create a NetworkPolicy that targets this pod to control who/what
+            can communicate with this pod. Note, this feature needs to be
+            supported by the CNI implementation used in the Kubernetes cluster
+            to have an effect.
+    [CRITICAL] Container Ephemeral Storage Request and Limit
+        · frinx-frontend -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · frinx-frontend -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+        · frinx-frontend-proxy -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · frinx-frontend-proxy -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+    [WARNING] Deployment Replicas
+        · Deployment few replicas
+            Deployments targeted by Services are recommended to have at least 2
+            replicas to prevent unwanted downtime.
+apps/v1/Deployment frinx-machine-oauth2-proxy in gitops-boilerplate-dev       💥
+    path=STDIN
+    [CRITICAL] Container Ephemeral Storage Request and Limit
+        · oauth2-proxy -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · oauth2-proxy -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+    [CRITICAL] Container Image Pull Policy
+        · oauth2-proxy -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+    [CRITICAL] Container Security Context User Group ID
+        · oauth2-proxy -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · oauth2-proxy -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+    [CRITICAL] Container Resources
+        · oauth2-proxy -> CPU limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.cpu
+        · oauth2-proxy -> Memory limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.memory
+        · oauth2-proxy -> CPU request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.cpu
+        · oauth2-proxy -> Memory request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.memory
+    [CRITICAL] Pod NetworkPolicy
+        · The pod does not have a matching NetworkPolicy
+            Create a NetworkPolicy that targets this pod to control who/what
+            can communicate with this pod. Note, this feature needs to be
+            supported by the CNI implementation used in the Kubernetes cluster
+            to have an effect.
+    [WARNING] Deployment Replicas
+        · Deployment few replicas
+            Deployments targeted by Services are recommended to have at least 2
+            replicas to prevent unwanted downtime.
+apps/v1/Deployment inventory in gitops-boilerplate-dev                        💥
+    path=STDIN
+    [CRITICAL] Container Ephemeral Storage Request and Limit
+        · check-db-ready -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · check-db-ready -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+        · inventory -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · inventory -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+    [CRITICAL] Container Image Pull Policy
+        · check-db-ready -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+        · inventory -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+    [CRITICAL] Pod Probes
+        · Container has the same readiness and liveness probe
+            Using the same probe for liveness and readiness is very likely
+            dangerous. Generally it's better to avoid the livenessProbe than
+            re-using the readinessProbe.
+            More information: https://github.com/zegl/kube-score/blob/master/README_PROBES.md
+    [CRITICAL] Container Security Context User Group ID
+        · check-db-ready -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · check-db-ready -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+        · inventory -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · inventory -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+    [CRITICAL] Container Security Context ReadOnlyRootFilesystem
+        · check-db-ready -> The pod has a container with a writable root filesystem
+            Set securityContext.readOnlyRootFilesystem to true
+        · inventory -> The pod has a container with a writable root filesystem
+            Set securityContext.readOnlyRootFilesystem to true
+    [CRITICAL] Container Resources
+        · check-db-ready -> CPU limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.cpu
+        · check-db-ready -> Memory limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.memory
+        · check-db-ready -> CPU request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.cpu
+        · check-db-ready -> Memory request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.memory
+    [CRITICAL] Pod NetworkPolicy
+        · The pod does not have a matching NetworkPolicy
+            Create a NetworkPolicy that targets this pod to control who/what
+            can communicate with this pod. Note, this feature needs to be
+            supported by the CNI implementation used in the Kubernetes cluster
+            to have an effect.
+    [WARNING] Deployment Replicas
+        · Deployment few replicas
+            Deployments targeted by Services are recommended to have at least 2
+            replicas to prevent unwanted downtime.
+apps/v1/Deployment krakend in gitops-boilerplate-dev                          💥
+    path=STDIN
+    [CRITICAL] Container Security Context ReadOnlyRootFilesystem
+        · krakend -> The pod has a container with a writable root filesystem
+            Set securityContext.readOnlyRootFilesystem to true
+    [CRITICAL] Container Image Pull Policy
+        · nginx -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+        · krakend -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+    [CRITICAL] Pod Probes
+        · Container has the same readiness and liveness probe
+            Using the same probe for liveness and readiness is very likely
+            dangerous. Generally it's better to avoid the livenessProbe than
+            re-using the readinessProbe.
+            More information: https://github.com/zegl/kube-score/blob/master/README_PROBES.md
+    [CRITICAL] Container Security Context User Group ID
+        · nginx -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · nginx -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+        · krakend -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · krakend -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+    [CRITICAL] Container Resources
+        · nginx -> CPU limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.cpu
+        · nginx -> Memory limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.memory
+        · nginx -> CPU request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.cpu
+        · nginx -> Memory request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.memory
+    [CRITICAL] Pod NetworkPolicy
+        · The pod does not have a matching NetworkPolicy
+            Create a NetworkPolicy that targets this pod to control who/what
+            can communicate with this pod. Note, this feature needs to be
+            supported by the CNI implementation used in the Kubernetes cluster
+            to have an effect.
+    [CRITICAL] Container Ephemeral Storage Request and Limit
+        · nginx -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · nginx -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+        · krakend -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · krakend -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+    [WARNING] Deployment Replicas
+        · Deployment few replicas
+            Deployments targeted by Services are recommended to have at least 2
+            replicas to prevent unwanted downtime.
+apps/v1/Deployment performance-monitor in gitops-boilerplate-dev              💥
+    path=STDIN
+    [CRITICAL] Container Ephemeral Storage Request and Limit
+        · check-db-ready -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · check-db-ready -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+        · check-kafka-ready -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · check-kafka-ready -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+        · performance-monitor -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · performance-monitor -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+    [CRITICAL] Container Image Tag
+        · check-kafka-ready -> Image with latest tag
+            Using a fixed tag is recommended to avoid accidental upgrades
+    [CRITICAL] Container Image Pull Policy
+        · check-db-ready -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+        · check-kafka-ready -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+        · performance-monitor -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+    [CRITICAL] Container Security Context User Group ID
+        · check-db-ready -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · check-db-ready -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+        · check-kafka-ready -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · check-kafka-ready -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+        · performance-monitor -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · performance-monitor -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+    [CRITICAL] Container Security Context ReadOnlyRootFilesystem
+        · check-db-ready -> Container has no configured security context
+            Set securityContext to run the container in a more secure context.
+        · check-kafka-ready -> Container has no configured security context
+            Set securityContext to run the container in a more secure context.
+        · performance-monitor -> The pod has a container with a writable root filesystem
+            Set securityContext.readOnlyRootFilesystem to true
+    [CRITICAL] Pod NetworkPolicy
+        · The pod does not have a matching NetworkPolicy
+            Create a NetworkPolicy that targets this pod to control who/what
+            can communicate with this pod. Note, this feature needs to be
+            supported by the CNI implementation used in the Kubernetes cluster
+            to have an effect.
+    [WARNING] Deployment Replicas
+        · Deployment few replicas
+            Deployments targeted by Services are recommended to have at least 2
+            replicas to prevent unwanted downtime.
+apps/v1/Deployment resource-manager in gitops-boilerplate-dev                 💥
+    path=STDIN
+    [CRITICAL] Container Ephemeral Storage Request and Limit
+        · check-db-ready -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · check-db-ready -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+        · resource-manager -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · resource-manager -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+    [CRITICAL] Container Image Pull Policy
+        · check-db-ready -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+        · resource-manager -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+    [CRITICAL] Container Security Context User Group ID
+        · check-db-ready -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · check-db-ready -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+        · resource-manager -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · resource-manager -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+    [CRITICAL] Container Security Context ReadOnlyRootFilesystem
+        · check-db-ready -> Container has no configured security context
+            Set securityContext to run the container in a more secure context.
+        · resource-manager -> The pod has a container with a writable root filesystem
+            Set securityContext.readOnlyRootFilesystem to true
+    [CRITICAL] Container Resources
+        · check-db-ready -> CPU limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.cpu
+        · check-db-ready -> Memory limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.memory
+        · check-db-ready -> CPU request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.cpu
+        · check-db-ready -> Memory request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.memory
+    [CRITICAL] Pod NetworkPolicy
+        · The pod does not have a matching NetworkPolicy
+            Create a NetworkPolicy that targets this pod to control who/what
+            can communicate with this pod. Note, this feature needs to be
+            supported by the CNI implementation used in the Kubernetes cluster
+            to have an effect.
+    [WARNING] Deployment Replicas
+        · Deployment few replicas
+            Deployments targeted by Services are recommended to have at least 2
+            replicas to prevent unwanted downtime.
+apps/v1/Deployment strimzi-cluster-operator in gitops-boilerplate-dev         💥
+    path=STDIN
+    [CRITICAL] Pod NetworkPolicy
+        · The pod does not have a matching NetworkPolicy
+            Create a NetworkPolicy that targets this pod to control who/what
+            can communicate with this pod. Note, this feature needs to be
+            supported by the CNI implementation used in the Kubernetes cluster
+            to have an effect.
+    [CRITICAL] Container Ephemeral Storage Request and Limit
+        · strimzi-cluster-operator -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · strimzi-cluster-operator -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+    [CRITICAL] Container Security Context ReadOnlyRootFilesystem
+        · strimzi-cluster-operator -> Container has no configured security context
+            Set securityContext to run the container in a more secure context.
+    [CRITICAL] Container Image Pull Policy
+        · strimzi-cluster-operator -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+    [CRITICAL] Container Security Context User Group ID
+        · strimzi-cluster-operator -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · strimzi-cluster-operator -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+apps/v1/Deployment swagger-ui in gitops-boilerplate-dev                       💥
+    path=STDIN
+    [CRITICAL] Container Ephemeral Storage Request and Limit
+        · uniconfig-fetch -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · uniconfig-fetch -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+        · uniconfig-format -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · uniconfig-format -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+        · workflow-manager-fetch -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · workflow-manager-fetch -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+        · workflow-manager-format -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · workflow-manager-format -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+        · swagger-ui -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · swagger-ui -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+    [CRITICAL] Container Security Context ReadOnlyRootFilesystem
+        · uniconfig-fetch -> Container has no configured security context
+            Set securityContext to run the container in a more secure context.
+        · uniconfig-format -> Container has no configured security context
+            Set securityContext to run the container in a more secure context.
+        · workflow-manager-fetch -> Container has no configured security context
+            Set securityContext to run the container in a more secure context.
+        · workflow-manager-format -> Container has no configured security context
+            Set securityContext to run the container in a more secure context.
+        · swagger-ui -> The pod has a container with a writable root filesystem
+            Set securityContext.readOnlyRootFilesystem to true
+    [CRITICAL] Container Image Pull Policy
+        · uniconfig-fetch -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+        · uniconfig-format -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+        · workflow-manager-fetch -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+        · workflow-manager-format -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+        · swagger-ui -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+    [CRITICAL] Pod Probes
+        · Container is missing a readinessProbe
+            A readinessProbe should be used to indicate when the service is
+            ready to receive traffic. Without it, the Pod is risking to receive
+            traffic before it has booted. It's also used during rollouts, and
+            can prevent downtime if a new version of the application is failing.
+            More information: https://github.com/zegl/kube-score/blob/master/README_PROBES.md
+    [CRITICAL] Container Security Context User Group ID
+        · uniconfig-fetch -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · uniconfig-fetch -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+        · uniconfig-format -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · uniconfig-format -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+        · workflow-manager-fetch -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · workflow-manager-fetch -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+        · workflow-manager-format -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · workflow-manager-format -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+        · swagger-ui -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · swagger-ui -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+    [CRITICAL] Container Resources
+        · uniconfig-fetch -> CPU limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.cpu
+        · uniconfig-fetch -> Memory limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.memory
+        · uniconfig-fetch -> CPU request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.cpu
+        · uniconfig-fetch -> Memory request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.memory
+        · uniconfig-format -> CPU limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.cpu
+        · uniconfig-format -> Memory limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.memory
+        · uniconfig-format -> CPU request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.cpu
+        · uniconfig-format -> Memory request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.memory
+        · workflow-manager-fetch -> CPU limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.cpu
+        · workflow-manager-fetch -> Memory limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.memory
+        · workflow-manager-fetch -> CPU request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.cpu
+        · workflow-manager-fetch -> Memory request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.memory
+        · workflow-manager-format -> CPU limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.cpu
+        · workflow-manager-format -> Memory limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.memory
+        · workflow-manager-format -> CPU request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.cpu
+        · workflow-manager-format -> Memory request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.memory
+    [CRITICAL] Pod NetworkPolicy
+        · The pod does not have a matching NetworkPolicy
+            Create a NetworkPolicy that targets this pod to control who/what
+            can communicate with this pod. Note, this feature needs to be
+            supported by the CNI implementation used in the Kubernetes cluster
+            to have an effect.
+    [WARNING] Deployment Replicas
+        · Deployment few replicas
+            Deployments targeted by Services are recommended to have at least 2
+            replicas to prevent unwanted downtime.
+apps/v1/Deployment topology-discovery in gitops-boilerplate-dev               💥
+    path=STDIN
+    [CRITICAL] Container Ephemeral Storage Request and Limit
+        · check-conductor-ready -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · check-conductor-ready -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+        · check-arangodb-ready -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · check-arangodb-ready -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+        · topology-discovery -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · topology-discovery -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+        · topology-discovery-kafka-consumer-api -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · topology-discovery-kafka-consumer-api -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+    [CRITICAL] Pod Probes
+        · Container has the same readiness and liveness probe
+            Using the same probe for liveness and readiness is very likely
+            dangerous. Generally it's better to avoid the livenessProbe than
+            re-using the readinessProbe.
+            More information: https://github.com/zegl/kube-score/blob/master/README_PROBES.md
+    [CRITICAL] Container Security Context User Group ID
+        · check-conductor-ready -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · check-conductor-ready -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+        · check-arangodb-ready -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · check-arangodb-ready -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+        · topology-discovery -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · topology-discovery -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+        · topology-discovery-kafka-consumer-api -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · topology-discovery-kafka-consumer-api -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+    [CRITICAL] Container Security Context ReadOnlyRootFilesystem
+        · check-conductor-ready -> Container has no configured security context
+            Set securityContext to run the container in a more secure context.
+        · check-arangodb-ready -> Container has no configured security context
+            Set securityContext to run the container in a more secure context.
+        · topology-discovery -> The pod has a container with a writable root filesystem
+            Set securityContext.readOnlyRootFilesystem to true
+        · topology-discovery-kafka-consumer-api -> The pod has a container with a writable root filesystem
+            Set securityContext.readOnlyRootFilesystem to true
+    [CRITICAL] Container Image Tag
+        · check-conductor-ready -> Image with latest tag
+            Using a fixed tag is recommended to avoid accidental upgrades
+        · check-arangodb-ready -> Image with latest tag
+            Using a fixed tag is recommended to avoid accidental upgrades
+    [CRITICAL] Container Image Pull Policy
+        · topology-discovery -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+        · topology-discovery-kafka-consumer-api -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+    [CRITICAL] Container Resources
+        · check-conductor-ready -> CPU limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.cpu
+        · check-conductor-ready -> Memory limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.memory
+        · check-conductor-ready -> CPU request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.cpu
+        · check-conductor-ready -> Memory request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.memory
+        · check-arangodb-ready -> CPU limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.cpu
+        · check-arangodb-ready -> Memory limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.memory
+        · check-arangodb-ready -> CPU request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.cpu
+        · check-arangodb-ready -> Memory request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.memory
+        · topology-discovery-kafka-consumer-api -> CPU limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.cpu
+        · topology-discovery-kafka-consumer-api -> Memory limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.memory
+        · topology-discovery-kafka-consumer-api -> CPU request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.cpu
+        · topology-discovery-kafka-consumer-api -> Memory request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.memory
+    [CRITICAL] Pod NetworkPolicy
+        · The pod does not have a matching NetworkPolicy
+            Create a NetworkPolicy that targets this pod to control who/what
+            can communicate with this pod. Note, this feature needs to be
+            supported by the CNI implementation used in the Kubernetes cluster
+            to have an effect.
+    [WARNING] Deployment Replicas
+        · Deployment few replicas
+            Deployments targeted by Services are recommended to have at least 2
+            replicas to prevent unwanted downtime.
+apps/v1/Deployment uc-zone-lb in gitops-boilerplate-dev                       💥
+    path=STDIN
+    [CRITICAL] Pod NetworkPolicy
+        · The pod does not have a matching NetworkPolicy
+            Create a NetworkPolicy that targets this pod to control who/what
+            can communicate with this pod. Note, this feature needs to be
+            supported by the CNI implementation used in the Kubernetes cluster
+            to have an effect.
+    [CRITICAL] Container Ephemeral Storage Request and Limit
+        · uc-zone-lb -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · uc-zone-lb -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+    [CRITICAL] Container Image Pull Policy
+        · uc-zone-lb -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+    [CRITICAL] Pod Probes
+        · Container has the same readiness and liveness probe
+            Using the same probe for liveness and readiness is very likely
+            dangerous. Generally it's better to avoid the livenessProbe than
+            re-using the readinessProbe.
+            More information: https://github.com/zegl/kube-score/blob/master/README_PROBES.md
+    [WARNING] Deployment Replicas
+        · Deployment few replicas
+            Deployments targeted by Services are recommended to have at least 2
+            replicas to prevent unwanted downtime.
+apps/v1/Deployment uniconfig-controller in gitops-boilerplate-dev             💥
+    path=STDIN
+    [CRITICAL] Pod NetworkPolicy
+        · The pod does not have a matching NetworkPolicy
+            Create a NetworkPolicy that targets this pod to control who/what
+            can communicate with this pod. Note, this feature needs to be
+            supported by the CNI implementation used in the Kubernetes cluster
+            to have an effect.
+    [CRITICAL] Container Ephemeral Storage Request and Limit
+        · check-db-ready -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · check-db-ready -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+        · copy-config-files -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · copy-config-files -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+        · uniconfig -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · uniconfig -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+    [CRITICAL] Container Image Pull Policy
+        · check-db-ready -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+        · copy-config-files -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+        · uniconfig -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+    [CRITICAL] Pod Probes
+        · Container has the same readiness and liveness probe
+            Using the same probe for liveness and readiness is very likely
+            dangerous. Generally it's better to avoid the livenessProbe than
+            re-using the readinessProbe.
+            More information: https://github.com/zegl/kube-score/blob/master/README_PROBES.md
+    [CRITICAL] Container Security Context User Group ID
+        · check-db-ready -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · check-db-ready -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+        · copy-config-files -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · copy-config-files -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+        · uniconfig -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · uniconfig -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+    [CRITICAL] Container Security Context ReadOnlyRootFilesystem
+        · check-db-ready -> Container has no configured security context
+            Set securityContext to run the container in a more secure context.
+        · copy-config-files -> Container has no configured security context
+            Set securityContext to run the container in a more secure context.
+        · uniconfig -> The pod has a container with a writable root filesystem
+            Set securityContext.readOnlyRootFilesystem to true
+    [WARNING] Deployment Replicas
+        · Deployment few replicas
+            Deployments targeted by Services are recommended to have at least 2
+            replicas to prevent unwanted downtime.
+networking.k8s.io/v1/Ingress conductor-server in gitops-boilerplate-dev       ✅
+networking.k8s.io/v1/Ingress krakend in gitops-boilerplate-dev                ✅
+networking.k8s.io/v1/Ingress uniconfig-controller in gitops-boilerplate-dev   ✅
+v1/Pod arango-frinx-machine-operators-operator-55865f6dbc-dr9xm in gitops-boilerplate-dev💥
+    path=STDIN
+    [CRITICAL] Container Ephemeral Storage Request and Limit
+        · operator -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · operator -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+    [CRITICAL] Container Image Pull Policy
+        · operator -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+    [CRITICAL] Container Security Context User Group ID
+        · operator -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · operator -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+    [CRITICAL] Pod NetworkPolicy
+        · The pod does not have a matching NetworkPolicy
+            Create a NetworkPolicy that targets this pod to control who/what
+            can communicate with this pod. Note, this feature needs to be
+            supported by the CNI implementation used in the Kubernetes cluster
+            to have an effect.
+v1/Pod arango-frinx-machine-operators-operator-55865f6dbc-ssx8f in gitops-boilerplate-dev💥
+    path=STDIN
+    [CRITICAL] Pod NetworkPolicy
+        · The pod does not have a matching NetworkPolicy
+            Create a NetworkPolicy that targets this pod to control who/what
+            can communicate with this pod. Note, this feature needs to be
+            supported by the CNI implementation used in the Kubernetes cluster
+            to have an effect.
+    [CRITICAL] Container Ephemeral Storage Request and Limit
+        · operator -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · operator -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+    [CRITICAL] Container Image Pull Policy
+        · operator -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+    [CRITICAL] Container Security Context User Group ID
+        · operator -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · operator -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+v1/Pod arangodb-sngl-ngmjr8i7-e0f232 in gitops-boilerplate-dev                💥
+    path=STDIN
+    [CRITICAL] Container Resources
+        · init-lifecycle -> CPU limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.cpu
+        · init-lifecycle -> Memory limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.memory
+        · init-lifecycle -> CPU request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.cpu
+        · init-lifecycle -> Memory request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.memory
+        · version-check -> CPU limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.cpu
+        · version-check -> Memory limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.memory
+        · version-check -> CPU request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.cpu
+        · version-check -> Memory request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.memory
+        · server -> CPU limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.cpu
+        · server -> Memory limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.memory
+        · server -> CPU request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.cpu
+        · server -> Memory request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.memory
+    [CRITICAL] Pod NetworkPolicy
+        · The pod does not have a matching NetworkPolicy
+            Create a NetworkPolicy that targets this pod to control who/what
+            can communicate with this pod. Note, this feature needs to be
+            supported by the CNI implementation used in the Kubernetes cluster
+            to have an effect.
+    [CRITICAL] Container Ephemeral Storage Request and Limit
+        · init-lifecycle -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · init-lifecycle -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+        · uuid -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · uuid -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+        · version-check -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · version-check -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+        · server -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · server -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+    [CRITICAL] Container Image Pull Policy
+        · init-lifecycle -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+        · uuid -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+        · version-check -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+        · server -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+    [CRITICAL] Container Security Context User Group ID
+        · init-lifecycle -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · init-lifecycle -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+        · uuid -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · uuid -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+        · version-check -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · version-check -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+        · server -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · server -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+v1/Pod cloudnative-pg-operator-996c7f45-9h2f8 in gitops-boilerplate-dev       💥
+    path=STDIN
+    [CRITICAL] Container Resources
+        · manager -> CPU limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.cpu
+        · manager -> Memory limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.memory
+        · manager -> CPU request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.cpu
+        · manager -> Memory request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.memory
+    [CRITICAL] Pod NetworkPolicy
+        · The pod does not have a matching NetworkPolicy
+            Create a NetworkPolicy that targets this pod to control who/what
+            can communicate with this pod. Note, this feature needs to be
+            supported by the CNI implementation used in the Kubernetes cluster
+            to have an effect.
+    [CRITICAL] Container Ephemeral Storage Request and Limit
+        · manager -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · manager -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+    [CRITICAL] Container Image Pull Policy
+        · manager -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+    [CRITICAL] Pod Probes
+        · Container has the same readiness and liveness probe
+            Using the same probe for liveness and readiness is very likely
+            dangerous. Generally it's better to avoid the livenessProbe than
+            re-using the readinessProbe.
+            More information: https://github.com/zegl/kube-score/blob/master/README_PROBES.md
+v1/Pod conductor-server-7586f64698-lqr28 in gitops-boilerplate-dev            💥
+    path=STDIN
+    [CRITICAL] Container Ephemeral Storage Request and Limit
+        · check-db-ready -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · check-db-ready -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+        · workflow-manager -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · workflow-manager -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+        · workflow-manager-schellar -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · workflow-manager-schellar -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+    [CRITICAL] Container Image Pull Policy
+        · check-db-ready -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+        · workflow-manager -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+        · workflow-manager-schellar -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+    [CRITICAL] Pod Probes
+        · Container has the same readiness and liveness probe
+            Using the same probe for liveness and readiness is very likely
+            dangerous. Generally it's better to avoid the livenessProbe than
+            re-using the readinessProbe.
+            More information: https://github.com/zegl/kube-score/blob/master/README_PROBES.md
+    [CRITICAL] Container Security Context User Group ID
+        · check-db-ready -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · check-db-ready -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+        · workflow-manager -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · workflow-manager -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+        · workflow-manager-schellar -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · workflow-manager-schellar -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+    [CRITICAL] Container Security Context ReadOnlyRootFilesystem
+        · check-db-ready -> Container has no configured security context
+            Set securityContext to run the container in a more secure context.
+        · workflow-manager -> The pod has a container with a writable root filesystem
+            Set securityContext.readOnlyRootFilesystem to true
+        · workflow-manager-schellar -> The pod has a container with a writable root filesystem
+            Set securityContext.readOnlyRootFilesystem to true
+    [CRITICAL] Container Resources
+        · check-db-ready -> CPU limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.cpu
+        · check-db-ready -> Memory limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.memory
+        · check-db-ready -> CPU request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.cpu
+        · check-db-ready -> Memory request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.memory
+    [CRITICAL] Pod NetworkPolicy
+        · The pod does not have a matching NetworkPolicy
+            Create a NetworkPolicy that targets this pod to control who/what
+            can communicate with this pod. Note, this feature needs to be
+            supported by the CNI implementation used in the Kubernetes cluster
+            to have an effect.
+v1/Pod device-induction-67fb8f9ff6-c6q2w in gitops-boilerplate-dev            💥
+    path=STDIN
+    [CRITICAL] Pod NetworkPolicy
+        · The pod does not have a matching NetworkPolicy
+            Create a NetworkPolicy that targets this pod to control who/what
+            can communicate with this pod. Note, this feature needs to be
+            supported by the CNI implementation used in the Kubernetes cluster
+            to have an effect.
+    [CRITICAL] Container Ephemeral Storage Request and Limit
+        · check-uniconfig-ready -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · check-uniconfig-ready -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+        · check-conductor-ready -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · check-conductor-ready -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+        · check-inventory-ready -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · check-inventory-ready -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+        · copy-worker-files -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · copy-worker-files -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+        · device-induction -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · device-induction -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+    [CRITICAL] Container Image Pull Policy
+        · copy-worker-files -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+        · device-induction -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+    [CRITICAL] Container Security Context User Group ID
+        · check-uniconfig-ready -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · check-uniconfig-ready -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+        · check-conductor-ready -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · check-conductor-ready -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+        · check-inventory-ready -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · check-inventory-ready -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+        · copy-worker-files -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · copy-worker-files -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+        · device-induction -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · device-induction -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+    [CRITICAL] Container Security Context ReadOnlyRootFilesystem
+        · check-uniconfig-ready -> Container has no configured security context
+            Set securityContext to run the container in a more secure context.
+        · check-conductor-ready -> Container has no configured security context
+            Set securityContext to run the container in a more secure context.
+        · check-inventory-ready -> Container has no configured security context
+            Set securityContext to run the container in a more secure context.
+        · copy-worker-files -> Container has no configured security context
+            Set securityContext to run the container in a more secure context.
+        · device-induction -> The pod has a container with a writable root filesystem
+            Set securityContext.readOnlyRootFilesystem to true
+    [CRITICAL] Container Image Tag
+        · check-uniconfig-ready -> Image with latest tag
+            Using a fixed tag is recommended to avoid accidental upgrades
+        · check-conductor-ready -> Image with latest tag
+            Using a fixed tag is recommended to avoid accidental upgrades
+        · check-inventory-ready -> Image with latest tag
+            Using a fixed tag is recommended to avoid accidental upgrades
+v1/Pod frinx-frontend-7c9c7cffc4-zngpf in gitops-boilerplate-dev              💥
+    path=STDIN
+    [CRITICAL] Pod NetworkPolicy
+        · The pod does not have a matching NetworkPolicy
+            Create a NetworkPolicy that targets this pod to control who/what
+            can communicate with this pod. Note, this feature needs to be
+            supported by the CNI implementation used in the Kubernetes cluster
+            to have an effect.
+    [CRITICAL] Container Ephemeral Storage Request and Limit
+        · frinx-frontend -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · frinx-frontend -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+        · frinx-frontend-proxy -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · frinx-frontend-proxy -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+    [CRITICAL] Container Image Pull Policy
+        · frinx-frontend -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+        · frinx-frontend-proxy -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+    [CRITICAL] Pod Probes
+        · Container has the same readiness and liveness probe
+            Using the same probe for liveness and readiness is very likely
+            dangerous. Generally it's better to avoid the livenessProbe than
+            re-using the readinessProbe.
+            More information: https://github.com/zegl/kube-score/blob/master/README_PROBES.md
+    [CRITICAL] Container Security Context User Group ID
+        · frinx-frontend -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · frinx-frontend -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+        · frinx-frontend-proxy -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · frinx-frontend-proxy -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+    [CRITICAL] Container Security Context ReadOnlyRootFilesystem
+        · frinx-frontend -> The pod has a container with a writable root filesystem
+            Set securityContext.readOnlyRootFilesystem to true
+        · frinx-frontend-proxy -> The pod has a container with a writable root filesystem
+            Set securityContext.readOnlyRootFilesystem to true
+    [CRITICAL] Container Resources
+        · frinx-frontend -> CPU limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.cpu
+        · frinx-frontend -> Memory limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.memory
+        · frinx-frontend -> CPU request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.cpu
+        · frinx-frontend -> Memory request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.memory
+        · frinx-frontend-proxy -> CPU limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.cpu
+        · frinx-frontend-proxy -> Memory limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.memory
+        · frinx-frontend-proxy -> CPU request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.cpu
+        · frinx-frontend-proxy -> Memory request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.memory
+v1/Pod frinx-frontend-ffbc86f4-f697h in gitops-boilerplate-dev                💥
+    path=STDIN
+    [CRITICAL] Container Image Pull Policy
+        · frinx-frontend -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+        · frinx-frontend-proxy -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+    [CRITICAL] Pod Probes
+        · Container has the same readiness and liveness probe
+            Using the same probe for liveness and readiness is very likely
+            dangerous. Generally it's better to avoid the livenessProbe than
+            re-using the readinessProbe.
+            More information: https://github.com/zegl/kube-score/blob/master/README_PROBES.md
+    [CRITICAL] Container Security Context User Group ID
+        · frinx-frontend -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · frinx-frontend -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+        · frinx-frontend-proxy -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · frinx-frontend-proxy -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+    [CRITICAL] Container Security Context ReadOnlyRootFilesystem
+        · frinx-frontend -> The pod has a container with a writable root filesystem
+            Set securityContext.readOnlyRootFilesystem to true
+        · frinx-frontend-proxy -> The pod has a container with a writable root filesystem
+            Set securityContext.readOnlyRootFilesystem to true
+    [CRITICAL] Pod NetworkPolicy
+        · The pod does not have a matching NetworkPolicy
+            Create a NetworkPolicy that targets this pod to control who/what
+            can communicate with this pod. Note, this feature needs to be
+            supported by the CNI implementation used in the Kubernetes cluster
+            to have an effect.
+    [CRITICAL] Container Ephemeral Storage Request and Limit
+        · frinx-frontend -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · frinx-frontend -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+        · frinx-frontend-proxy -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · frinx-frontend-proxy -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+v1/Pod frinx-machine-oauth2-proxy-5cc549fcfb-2j8h2 in gitops-boilerplate-dev  💥
+    path=STDIN
+    [CRITICAL] Container Image Pull Policy
+        · oauth2-proxy -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+    [CRITICAL] Container Security Context User Group ID
+        · oauth2-proxy -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · oauth2-proxy -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+    [CRITICAL] Container Resources
+        · oauth2-proxy -> CPU limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.cpu
+        · oauth2-proxy -> Memory limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.memory
+        · oauth2-proxy -> CPU request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.cpu
+        · oauth2-proxy -> Memory request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.memory
+    [CRITICAL] Pod NetworkPolicy
+        · The pod does not have a matching NetworkPolicy
+            Create a NetworkPolicy that targets this pod to control who/what
+            can communicate with this pod. Note, this feature needs to be
+            supported by the CNI implementation used in the Kubernetes cluster
+            to have an effect.
+    [CRITICAL] Container Ephemeral Storage Request and Limit
+        · oauth2-proxy -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · oauth2-proxy -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+v1/Pod inventory-55b648dc84-n9dsq in gitops-boilerplate-dev                   💥
+    path=STDIN
+    [CRITICAL] Container Ephemeral Storage Request and Limit
+        · check-db-ready -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · check-db-ready -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+        · inventory -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · inventory -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+    [CRITICAL] Container Image Pull Policy
+        · check-db-ready -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+        · inventory -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+    [CRITICAL] Pod Probes
+        · Container has the same readiness and liveness probe
+            Using the same probe for liveness and readiness is very likely
+            dangerous. Generally it's better to avoid the livenessProbe than
+            re-using the readinessProbe.
+            More information: https://github.com/zegl/kube-score/blob/master/README_PROBES.md
+    [CRITICAL] Container Security Context User Group ID
+        · check-db-ready -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · check-db-ready -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+        · inventory -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · inventory -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+    [CRITICAL] Container Security Context ReadOnlyRootFilesystem
+        · check-db-ready -> The pod has a container with a writable root filesystem
+            Set securityContext.readOnlyRootFilesystem to true
+        · inventory -> The pod has a container with a writable root filesystem
+            Set securityContext.readOnlyRootFilesystem to true
+    [CRITICAL] Container Resources
+        · check-db-ready -> CPU limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.cpu
+        · check-db-ready -> Memory limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.memory
+        · check-db-ready -> CPU request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.cpu
+        · check-db-ready -> Memory request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.memory
+    [CRITICAL] Pod NetworkPolicy
+        · The pod does not have a matching NetworkPolicy
+            Create a NetworkPolicy that targets this pod to control who/what
+            can communicate with this pod. Note, this feature needs to be
+            supported by the CNI implementation used in the Kubernetes cluster
+            to have an effect.
+v1/Pod kafka-controller-0 in gitops-boilerplate-dev                           💥
+    path=STDIN
+    [CRITICAL] Container Resources
+        · kafka-init -> CPU limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.cpu
+        · kafka-init -> Memory limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.memory
+        · kafka-init -> CPU request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.cpu
+        · kafka-init -> Memory request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.memory
+        · kafka -> CPU limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.cpu
+        · kafka -> Memory limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.memory
+        · kafka -> CPU request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.cpu
+        · kafka -> Memory request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.memory
+    [CRITICAL] Pod NetworkPolicy
+        · The pod does not have a matching NetworkPolicy
+            Create a NetworkPolicy that targets this pod to control who/what
+            can communicate with this pod. Note, this feature needs to be
+            supported by the CNI implementation used in the Kubernetes cluster
+            to have an effect.
+    [CRITICAL] Container Ephemeral Storage Request and Limit
+        · kafka-init -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · kafka-init -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+        · kafka -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · kafka -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+    [CRITICAL] Container Image Pull Policy
+        · kafka-init -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+        · kafka -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+    [CRITICAL] Pod Probes
+        · Container has the same readiness and liveness probe
+            Using the same probe for liveness and readiness is very likely
+            dangerous. Generally it's better to avoid the livenessProbe than
+            re-using the readinessProbe.
+            More information: https://github.com/zegl/kube-score/blob/master/README_PROBES.md
+    [CRITICAL] Container Security Context User Group ID
+        · kafka-init -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · kafka-init -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+        · kafka -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · kafka -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+v1/Pod krakend-77744f8798-rd85v in gitops-boilerplate-dev                     💥
+    path=STDIN
+    [CRITICAL] Pod NetworkPolicy
+        · The pod does not have a matching NetworkPolicy
+            Create a NetworkPolicy that targets this pod to control who/what
+            can communicate with this pod. Note, this feature needs to be
+            supported by the CNI implementation used in the Kubernetes cluster
+            to have an effect.
+    [CRITICAL] Container Ephemeral Storage Request and Limit
+        · nginx -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · nginx -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+        · krakend -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · krakend -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+    [CRITICAL] Container Image Pull Policy
+        · nginx -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+        · krakend -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+    [CRITICAL] Pod Probes
+        · Container has the same readiness and liveness probe
+            Using the same probe for liveness and readiness is very likely
+            dangerous. Generally it's better to avoid the livenessProbe than
+            re-using the readinessProbe.
+            More information: https://github.com/zegl/kube-score/blob/master/README_PROBES.md
+    [CRITICAL] Container Security Context User Group ID
+        · nginx -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · nginx -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+        · krakend -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · krakend -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+    [CRITICAL] Container Security Context ReadOnlyRootFilesystem
+        · krakend -> The pod has a container with a writable root filesystem
+            Set securityContext.readOnlyRootFilesystem to true
+    [CRITICAL] Container Resources
+        · nginx -> CPU limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.cpu
+        · nginx -> Memory limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.memory
+        · nginx -> CPU request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.cpu
+        · nginx -> Memory request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.memory
+v1/Pod performance-monitor-5bd76679c9-vhwg2 in gitops-boilerplate-dev         💥
+    path=STDIN
+    [CRITICAL] Container Security Context ReadOnlyRootFilesystem
+        · check-db-ready -> Container has no configured security context
+            Set securityContext to run the container in a more secure context.
+        · check-kafka-ready -> Container has no configured security context
+            Set securityContext to run the container in a more secure context.
+        · performance-monitor -> The pod has a container with a writable root filesystem
+            Set securityContext.readOnlyRootFilesystem to true
+    [CRITICAL] Container Image Tag
+        · check-kafka-ready -> Image with latest tag
+            Using a fixed tag is recommended to avoid accidental upgrades
+    [CRITICAL] Container Image Pull Policy
+        · check-db-ready -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+        · check-kafka-ready -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+        · performance-monitor -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+    [CRITICAL] Container Security Context User Group ID
+        · check-db-ready -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · check-db-ready -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+        · check-kafka-ready -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · check-kafka-ready -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+        · performance-monitor -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · performance-monitor -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+    [CRITICAL] Pod NetworkPolicy
+        · The pod does not have a matching NetworkPolicy
+            Create a NetworkPolicy that targets this pod to control who/what
+            can communicate with this pod. Note, this feature needs to be
+            supported by the CNI implementation used in the Kubernetes cluster
+            to have an effect.
+    [CRITICAL] Container Ephemeral Storage Request and Limit
+        · check-db-ready -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · check-db-ready -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+        · check-kafka-ready -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · check-kafka-ready -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+        · performance-monitor -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · performance-monitor -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+v1/Pod postgresql-1 in gitops-boilerplate-dev                                 💥
+    path=STDIN
+    [CRITICAL] Pod NetworkPolicy
+        · The pod does not have a matching NetworkPolicy
+            Create a NetworkPolicy that targets this pod to control who/what
+            can communicate with this pod. Note, this feature needs to be
+            supported by the CNI implementation used in the Kubernetes cluster
+            to have an effect.
+    [CRITICAL] Container Ephemeral Storage Request and Limit
+        · bootstrap-controller -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · bootstrap-controller -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+        · postgres -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · postgres -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+    [CRITICAL] Container Image Pull Policy
+        · bootstrap-controller -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+        · postgres -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+    [CRITICAL] Container Security Context User Group ID
+        · bootstrap-controller -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · bootstrap-controller -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+        · postgres -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · postgres -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+    [CRITICAL] Container Resources
+        · bootstrap-controller -> CPU limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.cpu
+        · bootstrap-controller -> Memory limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.memory
+        · bootstrap-controller -> CPU request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.cpu
+        · bootstrap-controller -> Memory request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.memory
+        · postgres -> CPU limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.cpu
+        · postgres -> Memory limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.memory
+        · postgres -> CPU request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.cpu
+        · postgres -> Memory request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.memory
+v1/Pod postgresql-2 in gitops-boilerplate-dev                                 💥
+    path=STDIN
+    [CRITICAL] Container Image Pull Policy
+        · bootstrap-controller -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+        · postgres -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+    [CRITICAL] Container Security Context User Group ID
+        · bootstrap-controller -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · bootstrap-controller -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+        · postgres -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · postgres -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+    [CRITICAL] Container Resources
+        · bootstrap-controller -> CPU limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.cpu
+        · bootstrap-controller -> Memory limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.memory
+        · bootstrap-controller -> CPU request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.cpu
+        · bootstrap-controller -> Memory request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.memory
+        · postgres -> CPU limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.cpu
+        · postgres -> Memory limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.memory
+        · postgres -> CPU request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.cpu
+        · postgres -> Memory request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.memory
+    [CRITICAL] Pod NetworkPolicy
+        · The pod does not have a matching NetworkPolicy
+            Create a NetworkPolicy that targets this pod to control who/what
+            can communicate with this pod. Note, this feature needs to be
+            supported by the CNI implementation used in the Kubernetes cluster
+            to have an effect.
+    [CRITICAL] Container Ephemeral Storage Request and Limit
+        · bootstrap-controller -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · bootstrap-controller -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+        · postgres -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · postgres -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+v1/Pod resource-manager-7bb6bb75d6-zjv2k in gitops-boilerplate-dev            💥
+    path=STDIN
+    [CRITICAL] Pod NetworkPolicy
+        · The pod does not have a matching NetworkPolicy
+            Create a NetworkPolicy that targets this pod to control who/what
+            can communicate with this pod. Note, this feature needs to be
+            supported by the CNI implementation used in the Kubernetes cluster
+            to have an effect.
+    [CRITICAL] Container Ephemeral Storage Request and Limit
+        · check-db-ready -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · check-db-ready -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+        · resource-manager -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · resource-manager -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+    [CRITICAL] Container Security Context User Group ID
+        · check-db-ready -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · check-db-ready -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+        · resource-manager -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · resource-manager -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+    [CRITICAL] Container Security Context ReadOnlyRootFilesystem
+        · check-db-ready -> Container has no configured security context
+            Set securityContext to run the container in a more secure context.
+        · resource-manager -> The pod has a container with a writable root filesystem
+            Set securityContext.readOnlyRootFilesystem to true
+    [CRITICAL] Container Image Pull Policy
+        · check-db-ready -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+        · resource-manager -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+    [CRITICAL] Container Resources
+        · check-db-ready -> CPU limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.cpu
+        · check-db-ready -> Memory limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.memory
+        · check-db-ready -> CPU request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.cpu
+        · check-db-ready -> Memory request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.memory
+v1/Pod strimzi-cluster-operator-6948497896-dvw2p in gitops-boilerplate-dev    💥
+    path=STDIN
+    [CRITICAL] Container Ephemeral Storage Request and Limit
+        · strimzi-cluster-operator -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · strimzi-cluster-operator -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+    [CRITICAL] Container Image Pull Policy
+        · strimzi-cluster-operator -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+    [CRITICAL] Container Security Context User Group ID
+        · strimzi-cluster-operator -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · strimzi-cluster-operator -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+    [CRITICAL] Container Security Context ReadOnlyRootFilesystem
+        · strimzi-cluster-operator -> Container has no configured security context
+            Set securityContext to run the container in a more secure context.
+    [CRITICAL] Pod NetworkPolicy
+        · The pod does not have a matching NetworkPolicy
+            Create a NetworkPolicy that targets this pod to control who/what
+            can communicate with this pod. Note, this feature needs to be
+            supported by the CNI implementation used in the Kubernetes cluster
+            to have an effect.
+v1/Pod swagger-ui-649cbc6475-mq6lg in gitops-boilerplate-dev                  💥
+    path=STDIN
+    [CRITICAL] Container Image Pull Policy
+        · uniconfig-fetch -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+        · uniconfig-format -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+        · workflow-manager-fetch -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+        · workflow-manager-format -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+        · swagger-ui -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+    [CRITICAL] Pod Probes
+        · Container is missing a readinessProbe
+            A readinessProbe should be used to indicate when the service is
+            ready to receive traffic. Without it, the Pod is risking to receive
+            traffic before it has booted. It's also used during rollouts, and
+            can prevent downtime if a new version of the application is failing.
+            More information: https://github.com/zegl/kube-score/blob/master/README_PROBES.md
+    [CRITICAL] Container Security Context User Group ID
+        · uniconfig-fetch -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · uniconfig-fetch -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+        · uniconfig-format -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · uniconfig-format -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+        · workflow-manager-fetch -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · workflow-manager-fetch -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+        · workflow-manager-format -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · workflow-manager-format -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+        · swagger-ui -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · swagger-ui -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+    [CRITICAL] Container Security Context ReadOnlyRootFilesystem
+        · uniconfig-fetch -> Container has no configured security context
+            Set securityContext to run the container in a more secure context.
+        · uniconfig-format -> Container has no configured security context
+            Set securityContext to run the container in a more secure context.
+        · workflow-manager-fetch -> Container has no configured security context
+            Set securityContext to run the container in a more secure context.
+        · workflow-manager-format -> Container has no configured security context
+            Set securityContext to run the container in a more secure context.
+        · swagger-ui -> The pod has a container with a writable root filesystem
+            Set securityContext.readOnlyRootFilesystem to true
+    [CRITICAL] Container Resources
+        · uniconfig-fetch -> CPU limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.cpu
+        · uniconfig-fetch -> Memory limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.memory
+        · uniconfig-fetch -> CPU request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.cpu
+        · uniconfig-fetch -> Memory request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.memory
+        · uniconfig-format -> CPU limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.cpu
+        · uniconfig-format -> Memory limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.memory
+        · uniconfig-format -> CPU request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.cpu
+        · uniconfig-format -> Memory request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.memory
+        · workflow-manager-fetch -> CPU limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.cpu
+        · workflow-manager-fetch -> Memory limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.memory
+        · workflow-manager-fetch -> CPU request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.cpu
+        · workflow-manager-fetch -> Memory request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.memory
+        · workflow-manager-format -> CPU limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.cpu
+        · workflow-manager-format -> Memory limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.memory
+        · workflow-manager-format -> CPU request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.cpu
+        · workflow-manager-format -> Memory request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.memory
+    [CRITICAL] Pod NetworkPolicy
+        · The pod does not have a matching NetworkPolicy
+            Create a NetworkPolicy that targets this pod to control who/what
+            can communicate with this pod. Note, this feature needs to be
+            supported by the CNI implementation used in the Kubernetes cluster
+            to have an effect.
+    [CRITICAL] Container Ephemeral Storage Request and Limit
+        · uniconfig-fetch -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · uniconfig-fetch -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+        · uniconfig-format -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · uniconfig-format -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+        · workflow-manager-fetch -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · workflow-manager-fetch -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+        · workflow-manager-format -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · workflow-manager-format -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+        · swagger-ui -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · swagger-ui -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+v1/Pod timescale-db-0 in gitops-boilerplate-dev                               💥
+    path=STDIN
+    [CRITICAL] Container Security Context User Group ID
+        · postgresql -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · postgresql -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+    [CRITICAL] Container Security Context ReadOnlyRootFilesystem
+        · postgresql -> The pod has a container with a writable root filesystem
+            Set securityContext.readOnlyRootFilesystem to true
+    [CRITICAL] Container Image Pull Policy
+        · postgresql -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+    [CRITICAL] Container Resources
+        · postgresql -> CPU limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.cpu
+        · postgresql -> Memory limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.memory
+    [CRITICAL] Pod NetworkPolicy
+        · The pod does not have a matching NetworkPolicy
+            Create a NetworkPolicy that targets this pod to control who/what
+            can communicate with this pod. Note, this feature needs to be
+            supported by the CNI implementation used in the Kubernetes cluster
+            to have an effect.
+    [CRITICAL] Container Ephemeral Storage Request and Limit
+        · postgresql -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · postgresql -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+v1/Pod topology-discovery-664c5f9f57-b4w2t in gitops-boilerplate-dev          💥
+    path=STDIN
+    [CRITICAL] Pod NetworkPolicy
+        · The pod does not have a matching NetworkPolicy
+            Create a NetworkPolicy that targets this pod to control who/what
+            can communicate with this pod. Note, this feature needs to be
+            supported by the CNI implementation used in the Kubernetes cluster
+            to have an effect.
+    [CRITICAL] Container Ephemeral Storage Request and Limit
+        · check-conductor-ready -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · check-conductor-ready -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+        · check-arangodb-ready -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · check-arangodb-ready -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+        · topology-discovery -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · topology-discovery -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+        · topology-discovery-kafka-consumer-api -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · topology-discovery-kafka-consumer-api -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+    [CRITICAL] Container Security Context User Group ID
+        · check-conductor-ready -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · check-conductor-ready -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+        · check-arangodb-ready -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · check-arangodb-ready -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+        · topology-discovery -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · topology-discovery -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+        · topology-discovery-kafka-consumer-api -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · topology-discovery-kafka-consumer-api -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+    [CRITICAL] Container Security Context ReadOnlyRootFilesystem
+        · check-conductor-ready -> Container has no configured security context
+            Set securityContext to run the container in a more secure context.
+        · check-arangodb-ready -> Container has no configured security context
+            Set securityContext to run the container in a more secure context.
+        · topology-discovery -> The pod has a container with a writable root filesystem
+            Set securityContext.readOnlyRootFilesystem to true
+        · topology-discovery-kafka-consumer-api -> The pod has a container with a writable root filesystem
+            Set securityContext.readOnlyRootFilesystem to true
+    [CRITICAL] Container Image Tag
+        · check-conductor-ready -> Image with latest tag
+            Using a fixed tag is recommended to avoid accidental upgrades
+        · check-arangodb-ready -> Image with latest tag
+            Using a fixed tag is recommended to avoid accidental upgrades
+    [CRITICAL] Container Image Pull Policy
+        · topology-discovery -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+        · topology-discovery-kafka-consumer-api -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+    [CRITICAL] Pod Probes
+        · Container has the same readiness and liveness probe
+            Using the same probe for liveness and readiness is very likely
+            dangerous. Generally it's better to avoid the livenessProbe than
+            re-using the readinessProbe.
+            More information: https://github.com/zegl/kube-score/blob/master/README_PROBES.md
+    [CRITICAL] Container Resources
+        · check-conductor-ready -> CPU limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.cpu
+        · check-conductor-ready -> Memory limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.memory
+        · check-conductor-ready -> CPU request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.cpu
+        · check-conductor-ready -> Memory request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.memory
+        · check-arangodb-ready -> CPU limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.cpu
+        · check-arangodb-ready -> Memory limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.memory
+        · check-arangodb-ready -> CPU request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.cpu
+        · check-arangodb-ready -> Memory request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.memory
+        · topology-discovery-kafka-consumer-api -> CPU limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.cpu
+        · topology-discovery-kafka-consumer-api -> Memory limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.memory
+        · topology-discovery-kafka-consumer-api -> CPU request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.cpu
+        · topology-discovery-kafka-consumer-api -> Memory request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.memory
+v1/Pod uc-zone-lb-8c659b6b8-2q5fc in gitops-boilerplate-dev                   💥
+    path=STDIN
+    [CRITICAL] Container Ephemeral Storage Request and Limit
+        · uc-zone-lb -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · uc-zone-lb -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+    [CRITICAL] Container Image Pull Policy
+        · uc-zone-lb -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+    [CRITICAL] Pod Probes
+        · Container has the same readiness and liveness probe
+            Using the same probe for liveness and readiness is very likely
+            dangerous. Generally it's better to avoid the livenessProbe than
+            re-using the readinessProbe.
+            More information: https://github.com/zegl/kube-score/blob/master/README_PROBES.md
+    [CRITICAL] Pod NetworkPolicy
+        · The pod does not have a matching NetworkPolicy
+            Create a NetworkPolicy that targets this pod to control who/what
+            can communicate with this pod. Note, this feature needs to be
+            supported by the CNI implementation used in the Kubernetes cluster
+            to have an effect.
+v1/Pod uniconfig-controller-99dc876f8-4lvkc in gitops-boilerplate-dev         💥
+    path=STDIN
+    [CRITICAL] Pod Probes
+        · Container has the same readiness and liveness probe
+            Using the same probe for liveness and readiness is very likely
+            dangerous. Generally it's better to avoid the livenessProbe than
+            re-using the readinessProbe.
+            More information: https://github.com/zegl/kube-score/blob/master/README_PROBES.md
+    [CRITICAL] Container Security Context User Group ID
+        · check-db-ready -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · check-db-ready -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+        · copy-config-files -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · copy-config-files -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+        · uniconfig -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · uniconfig -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+    [CRITICAL] Container Security Context ReadOnlyRootFilesystem
+        · check-db-ready -> Container has no configured security context
+            Set securityContext to run the container in a more secure context.
+        · copy-config-files -> Container has no configured security context
+            Set securityContext to run the container in a more secure context.
+        · uniconfig -> The pod has a container with a writable root filesystem
+            Set securityContext.readOnlyRootFilesystem to true
+    [CRITICAL] Container Image Pull Policy
+        · check-db-ready -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+        · copy-config-files -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+        · uniconfig -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+    [CRITICAL] Pod NetworkPolicy
+        · The pod does not have a matching NetworkPolicy
+            Create a NetworkPolicy that targets this pod to control who/what
+            can communicate with this pod. Note, this feature needs to be
+            supported by the CNI implementation used in the Kubernetes cluster
+            to have an effect.
+    [CRITICAL] Container Ephemeral Storage Request and Limit
+        · check-db-ready -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · check-db-ready -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+        · copy-config-files -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · copy-config-files -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+        · uniconfig -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · uniconfig -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+v1/Pod uniconfig-postgresql-1 in gitops-boilerplate-dev                       💥
+    path=STDIN
+    [CRITICAL] Container Image Pull Policy
+        · bootstrap-controller -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+        · postgres -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+    [CRITICAL] Container Security Context User Group ID
+        · bootstrap-controller -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · bootstrap-controller -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+        · postgres -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · postgres -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+    [CRITICAL] Container Resources
+        · bootstrap-controller -> CPU limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.cpu
+        · bootstrap-controller -> Memory limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.memory
+        · bootstrap-controller -> CPU request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.cpu
+        · bootstrap-controller -> Memory request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.memory
+        · postgres -> CPU limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.cpu
+        · postgres -> Memory limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.memory
+        · postgres -> CPU request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.cpu
+        · postgres -> Memory request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.memory
+    [CRITICAL] Pod NetworkPolicy
+        · The pod does not have a matching NetworkPolicy
+            Create a NetworkPolicy that targets this pod to control who/what
+            can communicate with this pod. Note, this feature needs to be
+            supported by the CNI implementation used in the Kubernetes cluster
+            to have an effect.
+    [CRITICAL] Container Ephemeral Storage Request and Limit
+        · bootstrap-controller -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · bootstrap-controller -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+        · postgres -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · postgres -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+v1/Pod uniconfig-postgresql-2 in gitops-boilerplate-dev                       💥
+    path=STDIN
+    [CRITICAL] Container Resources
+        · bootstrap-controller -> CPU limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.cpu
+        · bootstrap-controller -> Memory limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.memory
+        · bootstrap-controller -> CPU request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.cpu
+        · bootstrap-controller -> Memory request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.memory
+        · postgres -> CPU limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.cpu
+        · postgres -> Memory limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.memory
+        · postgres -> CPU request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.cpu
+        · postgres -> Memory request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.memory
+    [CRITICAL] Pod NetworkPolicy
+        · The pod does not have a matching NetworkPolicy
+            Create a NetworkPolicy that targets this pod to control who/what
+            can communicate with this pod. Note, this feature needs to be
+            supported by the CNI implementation used in the Kubernetes cluster
+            to have an effect.
+    [CRITICAL] Container Ephemeral Storage Request and Limit
+        · bootstrap-controller -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · bootstrap-controller -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+        · postgres -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · postgres -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+    [CRITICAL] Container Security Context User Group ID
+        · bootstrap-controller -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · bootstrap-controller -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+        · postgres -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · postgres -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+    [CRITICAL] Container Image Pull Policy
+        · bootstrap-controller -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+        · postgres -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+policy/v1/PodDisruptionBudget postgresql-primary in gitops-boilerplate-dev    ✅
+policy/v1/PodDisruptionBudget uniconfig-postgresql-primary in gitops-boilerplate-dev✅
+v1/Service arango-frinx-machine-operators-operator in gitops-boilerplate-dev  ✅
+v1/Service arangodb in gitops-boilerplate-dev                                 ✅
+v1/Service arangodb-int in gitops-boilerplate-dev                             ✅
+v1/Service arangodb-single-ngmjr8i7 in gitops-boilerplate-dev                 ✅
+v1/Service cnpg-webhook-service in gitops-boilerplate-dev                     ✅
+v1/Service conductor-server in gitops-boilerplate-dev                         ✅
+v1/Service frinx-frontend in gitops-boilerplate-dev                           ✅
+v1/Service frinx-machine-oauth2-proxy in gitops-boilerplate-dev               ✅
+v1/Service inventory in gitops-boilerplate-dev                                ✅
+v1/Service kafka in gitops-boilerplate-dev                                    ✅
+v1/Service kafka-controller-headless in gitops-boilerplate-dev                ✅
+v1/Service krakend in gitops-boilerplate-dev                                  ✅
+v1/Service performance-monitor in gitops-boilerplate-dev                      ✅
+v1/Service postgresql-r in gitops-boilerplate-dev                             ✅
+v1/Service postgresql-ro in gitops-boilerplate-dev                            ✅
+v1/Service postgresql-rw in gitops-boilerplate-dev                            ✅
+v1/Service resource-manager in gitops-boilerplate-dev                         ✅
+v1/Service swagger-ui in gitops-boilerplate-dev                               ✅
+v1/Service timescale-db in gitops-boilerplate-dev                             ✅
+v1/Service timescale-db-hl in gitops-boilerplate-dev                          ✅
+v1/Service topology-discovery in gitops-boilerplate-dev                       ✅
+v1/Service uniconfig in gitops-boilerplate-dev                                ✅
+v1/Service uniconfig-controller in gitops-boilerplate-dev                     ✅
+v1/Service uniconfig-postgresql-r in gitops-boilerplate-dev                   ✅
+v1/Service uniconfig-postgresql-ro in gitops-boilerplate-dev                  ✅
+v1/Service uniconfig-postgresql-rw in gitops-boilerplate-dev                  ✅
+apps/v1/StatefulSet kafka-controller in gitops-boilerplate-dev                💥
+    path=STDIN
+    [CRITICAL] Container Ephemeral Storage Request and Limit
+        · kafka-init -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · kafka-init -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+        · kafka -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · kafka -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+    [CRITICAL] Container Image Pull Policy
+        · kafka-init -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+        · kafka -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+    [CRITICAL] Pod Probes
+        · Container has the same readiness and liveness probe
+            Using the same probe for liveness and readiness is very likely
+            dangerous. Generally it's better to avoid the livenessProbe than
+            re-using the readinessProbe.
+            More information: https://github.com/zegl/kube-score/blob/master/README_PROBES.md
+    [CRITICAL] Container Security Context User Group ID
+        · kafka-init -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · kafka-init -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+        · kafka -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · kafka -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+    [CRITICAL] Container Resources
+        · kafka-init -> CPU limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.cpu
+        · kafka-init -> Memory limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.memory
+        · kafka-init -> CPU request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.cpu
+        · kafka-init -> Memory request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.memory
+        · kafka -> CPU limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.cpu
+        · kafka -> Memory limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.memory
+        · kafka -> CPU request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.cpu
+        · kafka -> Memory request is not set
+            Resource requests are recommended to make sure that the application
+            can start and run without crashing. Set resources.requests.memory
+    [CRITICAL] Pod NetworkPolicy
+        · The pod does not have a matching NetworkPolicy
+            Create a NetworkPolicy that targets this pod to control who/what
+            can communicate with this pod. Note, this feature needs to be
+            supported by the CNI implementation used in the Kubernetes cluster
+            to have an effect.
+apps/v1/StatefulSet timescale-db in gitops-boilerplate-dev                    💥
+    path=STDIN
+    [CRITICAL] Container Ephemeral Storage Request and Limit
+        · postgresql -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · postgresql -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+    [CRITICAL] Container Security Context User Group ID
+        · postgresql -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · postgresql -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+    [CRITICAL] Container Security Context ReadOnlyRootFilesystem
+        · postgresql -> The pod has a container with a writable root filesystem
+            Set securityContext.readOnlyRootFilesystem to true
+    [CRITICAL] Container Image Pull Policy
+        · postgresql -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+    [CRITICAL] Container Resources
+        · postgresql -> CPU limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.cpu
+        · postgresql -> Memory limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.memory
+    [CRITICAL] Pod NetworkPolicy
+        · The pod does not have a matching NetworkPolicy
+            Create a NetworkPolicy that targets this pod to control who/what
+            can communicate with this pod. Note, this feature needs to be
+            supported by the CNI implementation used in the Kubernetes cluster
+            to have an effect.

@@ -1,0 +1,13 @@
+frinx-machine: 
+
+  frinx-machine-operators:
+    enabled: true
+
+  frinx-machine-monitoring:
+    enabled: false
+
+  frinx-machine-core:
+    enabled: false
+
+  frinx-machine-persistence:
+    enabled: false

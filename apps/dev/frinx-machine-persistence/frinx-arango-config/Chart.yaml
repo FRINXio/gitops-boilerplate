@@ -1,0 +1,13 @@
+apiVersion: v2
+name: frinx-arango-config
+description: Kubernetes deployment of FRINX-machine arangodb
+icon: https://avatars.githubusercontent.com/u/23452093?s=200&v=4
+type: application
+version: 6.1.0
+maintainers:
+  - name: FRINX
+dependencies:
+  - name: frinx-machine
+    # repository: https://FRINXio.github.io/helm-charts
+    repository: file:///home/jozef/Documents/frinx/github/FM-debug/helm-charts/charts/frinx-machine
+    version: 9.0.0
