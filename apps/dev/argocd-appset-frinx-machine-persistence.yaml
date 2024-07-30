@@ -1,0 +1,66 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: frinx-machine-persistence-dev
+  namespace: argocd
+  # finalizers:
+  #   - resources-finalizer.argocd.argoproj.io
+  labels:
+    deployment: fm-dev
+    type: frinx-machine-persistence
+spec:
+  goTemplate: true
+  goTemplateOptions: ["missingkey=error"]
+  generators:
+    # - matrix:
+    #     generators:
+    #       - list:
+    #           elements:
+    #             - cluster: in-cluster
+    #               namespace: fm-dev
+    #               project: default
+    - list:
+        elements:
+          - name: frinx-arango-config
+          - name: kafka
+          - name: postgresql
+          - name: timescale-db
+          - name: uniconfig-postgres
+  template:
+    metadata:
+      name: "{{name}}-dev"
+      labels:
+        name: "{{name}}"
+        type: frinx-machine-persistence
+      finalizers:
+        - resources-finalizer.argocd.argoproj.io
+    spec:
+      project: "default"
+      destination:
+        name: "in-cluster"
+        namespace: "fm-dev"
+
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+          - CreateNamespace=true
+          - ServerSideApply=true
+        retry:
+          limit: 5
+          backoff:
+            duration: 5s
+            factor: 2
+            maxDuration: 3m
+
+      source:
+        repoURL: git@github.com:FRINXio/gitops-boilerplate.git
+        targetRevision: HEAD
+        path: "apps/dev/frinx-machine-persistence/{{name}}"
+        plugin:
+          name: kustomized-helm
+          parameters:
+            - name: helm-template-extra-args
+              string: |
+                -f values.yaml -f cluster-values.yaml

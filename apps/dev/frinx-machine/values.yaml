@@ -1,0 +1,31 @@
+# Global settings
+
+environment:
+  cluster:
+    enabled: false
+  local:
+    enabled: false
+
+frinx-machine:
+
+  frinx-machine-monitoring:
+    enabled: false
+
+  frinx-machine-persistence:
+    enabled: false
+
+  frinx-machine-operators:
+    enabled: false
+
+  frinx-machine-core:
+    global:
+      dbPersistence:
+        enabled: true
+
+    krakend:
+      enabled: true
+
+      debug:
+        # This setting should be disabled in production
+        enabled: true
+
