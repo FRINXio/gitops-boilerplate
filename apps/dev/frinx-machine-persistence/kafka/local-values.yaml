@@ -1,0 +1,5 @@
+environment:
+  cluster:
+    enabled: false
+  local:
+    enabled: true

@@ -1,0 +1,15 @@
+environment:
+  cluster:
+    enabled: true
+  local:
+    enabled: false
+
+frinx-machine:
+  workflow-manager-postgres:
+    resources:
+      limits:
+        cpu: 2
+        memory: 4Gi
+      requests:
+        cpu: 2
+        memory: 4Gi

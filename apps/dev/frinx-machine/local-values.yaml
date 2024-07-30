@@ -1,0 +1,12 @@
+environment:
+  cluster:
+    enabled: false
+  local:
+    enabled: true
+
+frinx-machine:
+  krakend:
+    nginx:
+      ingress:
+        enabled: true
+        hostname: krakend.127.0.0.1.nip.io

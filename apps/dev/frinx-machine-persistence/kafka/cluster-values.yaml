@@ -1,0 +1,16 @@
+environment:
+  cluster:
+    enabled: true
+  local:
+    enabled: false
+
+frinx-machine:
+  kafka:
+    controller:
+      resources:
+        limits:
+          cpu: 1000m
+          memory: 1024M
+        requests:
+          cpu: 500m
+          memory: 512M

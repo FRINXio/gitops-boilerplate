@@ -1,0 +1,15 @@
+environment:
+  cluster:
+    enabled: true
+  local:
+    enabled: false
+
+frinx-machine:
+  uniconfig-postgres:
+    resources:
+      limits:
+        cpu: 2
+        memory: 1Gi
+      requests:
+        cpu: 2
+        memory: 1Gi

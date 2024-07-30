@@ -1,0 +1,15 @@
+environment:
+  cluster:
+    enabled: true
+  local:
+    enabled: false
+
+frinx-machine:
+  frinx-arango-config:
+      resources:
+        limits:
+          cpu: 2
+          memory: 1024M
+        requests:
+          cpu: 500m
+          memory: 512M

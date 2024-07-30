@@ -1,0 +1,20 @@
+# Global settings
+
+environment:
+  cluster:
+    enabled: false
+  local:
+    enabled: false
+
+# Helm Chart dependency installation
+tags:
+  operators: false
+  monitoring: false
+  database: false
+  backend: true
+
+frinx-machine:
+  krakend:
+    debug:
+      # This setting should be disabled in production
+      enabled: false

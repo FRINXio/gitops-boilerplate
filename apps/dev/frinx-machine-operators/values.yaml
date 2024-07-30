@@ -1,0 +1,19 @@
+# Global settings
+global:
+  dbPersistence:
+    enabled: false
+
+# Environment selection
+# This is used for controlling of obejct deployment from this chart
+environment:
+  cluster:
+    enabled: false
+  local:
+    enabled: false
+
+# Helm Chart dependency installation
+tags:
+  operators: true
+  monitoring: false
+  database: false
+  backend: false

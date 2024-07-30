@@ -1,0 +1,149 @@
+environment:
+  cluster:
+    enabled: false
+  local:
+    enabled: false
+
+frinx-machine:
+  krakend:
+    ingress:
+      enabled: true
+      className: nginx
+      annotations:
+        nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+        nginx.ingress.kubernetes.io/proxy-connect-timeout: "3600"
+        nginx.ingress.kubernetes.io/proxy-read-timeout: "3600"
+        nginx.ingress.kubernetes.io/proxy-send-timeout: "3600"
+      hosts:
+        - host: fm-dev.127.0.0.1.nip.io
+          paths:
+            - path: "/"
+              pathType: ImplementationSpecific
+    resources:
+      limits:
+        cpu: 600m
+        memory: 128Mi
+      requests:
+        cpu: 400m
+        memory: 128Mi
+
+  uniconfig:
+    image:
+      repository: "frinxio/uniconfig"
+
+    resources:
+      limits:
+        cpu: 2000m
+        memory: 12Gi
+      requests:
+        cpu: 500m
+        memory: 5Gi
+
+  performance-monitor:
+    image:
+      repository: "frinxio/performance-monitor"
+
+    resources:
+      limits:
+        cpu: 250m
+        memory: 512Mi
+      requests:
+        cpu: 50m
+        memory: 256Mi
+
+  frinx-frontend:
+    resources:
+      limits:
+        cpu: 200m
+        memory: 128Mi
+      requests:
+        cpu: 100m
+        memory: 64Mi
+
+    proxyResources:
+      limits:
+        cpu: 4
+        memory: 4Gi
+      # requests:
+      #   cpu: 4
+      #   memory: 2Gi
+
+  resource-manager:
+    resources:
+      limits:
+        cpu: 4
+        memory: 2048Mi
+      requests:
+        cpu: 50m
+        memory: 64Mi
+
+  workflow-manager:
+    resources:
+      limits:
+        cpu: 5000m
+        memory: 5Gi
+      requests:
+        cpu: 100m
+        memory: 1Gi
+
+    schellarResources:
+      limits:
+        cpu: 150m
+        memory: 128Mi
+      requests:
+        cpu: 20m
+        memory: 64Mi
+
+  inventory:
+    resources: 
+      limits:
+        cpu: 500m
+        memory: 2Gi
+      requests:
+        cpu: 100m
+        memory: 256Mi
+
+  topology-discovery:
+    resources:
+      limits:
+        cpu: 500m
+        memory: 2Gi
+      requests:
+        cpu: 100m
+        memory: 512Mi
+
+    kafkaClientResources:
+      limits:
+        cpu: 50m
+        memory: 128Mi
+      requests:
+        cpu: 50m
+        memory: 128Mi
+
+  uc-zone-lb:
+    resources:
+      limits:
+        cpu: 250m
+        memory: 256Mi
+      requests:
+        cpu: 50m
+        memory: 128Mi
+
+  swagger-ui:
+    fullnameOverride: "swagger-ui"
+    resources:
+      limits:
+        cpu: 50m
+        memory: 64Mi
+      requests:
+        cpu: 10m
+        memory: 64Mi
+
+  device-induction:
+    resources:
+      limits:
+        cpu: 1000m
+        memory: 1Gi
+      requests:
+        cpu: 500m
+        memory: 256Mi

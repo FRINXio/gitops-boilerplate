@@ -1,0 +1,19 @@
+environment:
+  cluster:
+    enabled: false
+  local:
+    enabled: true
+
+# TODO
+frinx-machine:
+  frinx-machine-monitoring:
+    kube-prometheus-stack:
+      grafana:
+        ingress:
+          enabled: true
+          ingressClassName: nginx
+          # Values can be templated
+          path: /
+          pathType: Prefix
+          hosts:
+            - grafana.127.0.0.1.nip.io

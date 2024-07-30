@@ -1,0 +1,22 @@
+name: Kustomized-Helm manifest diff
+
+on: 
+  pull_request:
+
+env:
+  KUBE_SCORE_VERSION: 1.18.0
+
+jobs:
+
+  kube-score:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+  
+      - name: install kube-scre
+        run: |
+          wget https://github.com/zegl/kube-score/releases/download/v${{ env.KUBE_SCORE_VERSION}}/kube-score_${{ env.KUBE_SCORE_VERSION}}_linux_amd64 -O /usr/local/bin/kube-score
+          chmod +x /usr/local/bin/kube-score
+
+      - run: kube-score version
