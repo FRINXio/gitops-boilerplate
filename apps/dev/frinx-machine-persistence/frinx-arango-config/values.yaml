@@ -1,0 +1,30 @@
+frinx-machine:
+
+  frinx-machine-monitoring:
+    enabled: false
+
+  frinx-machine-core:
+    enabled: false
+
+  frinx-machine-operators:
+    enabled: false
+
+  # CONFUGIRE PERSISTENCE
+
+  frinx-machine-persistence:
+    enabled: true
+    
+    frinx-arango-config:
+      enabled: true
+
+    uniconfig-postgres:
+      enabled: false
+
+    workflow-manager-postgres:
+      enabled: false
+
+    kafka:
+      enabled: false
+
+    timescale-db:
+      enabled: false
