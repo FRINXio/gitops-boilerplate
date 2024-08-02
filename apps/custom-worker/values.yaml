@@ -1,0 +1,13 @@
+x-frinx-rbac-admin-role: &frinx-rbac-admin-role "FRINXio"
+
+frinx-workers-boilerplate:
+  enabled: true
+
+  fullnameOverride: "frinx-workers-boilerplate"
+
+  image:
+    repository: frinx/frinx-workers-boilerplate
+    tag: "6.1.0"
+
+  env:
+    X_AUTH_USER_GROUP: *frinx-rbac-admin-role

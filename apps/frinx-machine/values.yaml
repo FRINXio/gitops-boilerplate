@@ -1,0 +1,10 @@
+frinx-machine:
+  uniconfig:
+    image:
+      # Use private regitry
+      repository: "frinxio/uniconfig"
+
+  performance-monitor:
+    image:
+      # Use private regitry
+      repository: "frinxio/performance-monitor"

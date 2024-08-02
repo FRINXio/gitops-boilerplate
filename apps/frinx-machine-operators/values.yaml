@@ -1,0 +1,8 @@
+frinx-machine-operators:
+  # CRDs
+
+  kube-arangodb:
+    enabled: true
+
+  cloudnative-pg:
+    enabled: true

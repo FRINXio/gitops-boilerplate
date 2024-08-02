@@ -1,0 +1,12 @@
+apiVersion: v2
+name: frinx-machine-operators
+description: Kubernetes deployment of FRINX-machine
+icon: https://avatars.githubusercontent.com/u/23452093?s=200&v=4
+type: application
+version: 6.1.0
+maintainers:
+  - name: FRINX
+dependencies:
+  - name: frinx-machine-operators
+    repository: https://FRINXio.github.io/helm-charts
+    version: 0.2.0

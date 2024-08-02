@@ -1,0 +1,14 @@
+apiVersion: v2
+name: frinx-workers-boilerplate
+description: Kubernetes deployment of custom worker
+icon: https://avatars.githubusercontent.com/u/23452093?s=200&v=4
+type: application
+version: 6.1.0
+maintainers:
+  - name: FRINX
+dependencies:
+  - condition: frinx-workers-boilerplate.enabled
+    name: worker
+    alias: frinx-workers-boilerplate
+    repository: https://FRINXio.github.io/helm-charts
+    version: 4.0.0
